@@ -1,0 +1,1 @@
+var $api=new apiUtils.Api(apiUrl+"/v1/administrators/actions/logout"),$vue=new Vue({el:"#main",data:{pageLoad:!1},methods:{logout:function(){var i=this;$api.post(null,function(o,t){i.redirect()})},redirect:function(){window.top.location.href="pageLogin.cshtml"}}});$vue.logout();

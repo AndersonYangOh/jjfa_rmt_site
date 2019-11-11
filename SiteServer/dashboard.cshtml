@@ -1,0 +1,36 @@
+﻿@{ Layout = "./Shared/_LayoutRoot.cshtml"; }
+
+<div>
+
+  <h4 class="page-title mt-4 mb-4">
+    欢迎使用 融媒体平台 管理后台
+  </h4>
+
+
+   
+
+  <div class="card-box" v-if="unCheckedListTotalCount > 0">
+    <div class="header-title m-t-0">待审核内容</div>
+    <p class="text-muted m-b-25 font-13">
+      共有
+      <span style="color:#f00"> {{ unCheckedListTotalCount }} </span> 篇内容待审核
+    </p>
+
+    <div class="table-responsive">
+      <table class="table">
+        <tbody>
+          <tr v-for="item in unCheckedList">
+            <td>
+              <a v-bind:href="item.url"> {{ item.siteName }} 有
+                <span style="color:#f00"> {{ item.count }} </span> 篇</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+@section Scripts{
+<script src="dashboard.js?v=6.12.0" type="text/javascript"></script> }
